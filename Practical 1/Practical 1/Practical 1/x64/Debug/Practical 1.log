@@ -1,0 +1,3 @@
+﻿  Main.cpp
+C:\Users\goh20\source\repos\Practical 1\Practical 1\Main.cpp(57,27): error C2440: '=': cannot convert from 'const char [10]' to 'LPCWSTR'
+C:\Users\goh20\source\repos\Practical 1\Practical 1\Main.cpp(69,11): error C2664: 'HWND CreateWindowExW(DWORD,LPCWSTR,LPCWSTR,DWORD,int,int,int,int,HWND,HMENU,HINSTANCE,LPVOID)': cannot convert argument 3 from 'const char [17]' to 'LPCWSTR'
