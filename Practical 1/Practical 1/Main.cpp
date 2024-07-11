@@ -12,26 +12,35 @@ using namespace std;
 HWND g_hWnd = NULL;
 WNDCLASS wndClass;
 MSG msg;
+
+// This section is dynamic which you can look it as game setting
+
+// Default Value For RGB
 int R = 0;
 int G = 0;
 int B = 0;
 
+// Increment of RGB
 int RI = -5;
 int GI = -5;
 int BI = -5;
 
+// Default Screen Size For Windowed and Fullscreen
 int windowScreenWidth = 1280;
 int windowScreenHeight = 720;
 int fullScreenWidth = 1920;
 int fullScreenHeight = 1080;
 bool windowMode = true;
 
+// Application of Screen Size
 int defaultScreenWidth = windowScreenWidth;
 int defaultScreenHeight = windowScreenHeight;
 
+// Set Variable Pointer
 IDirect3D9* direct3D9 = NULL;
 IDirect3DDevice9* d3dDevice = NULL;
 
+// Function that make sure RGB does not exceed below 0 and above 255
 int setLimit(int colorInt) {
 	if (colorInt >= 255) {
 		colorInt = 255;
@@ -42,6 +51,9 @@ int setLimit(int colorInt) {
 	return colorInt;
 }
 
+// Function that create virtual graphics device
+// It was used to update the resolution of the graphics
+// Might have more configuration can be explored in the future
 void createDevice() {
 	if (d3dDevice != NULL) {
 		d3dDevice->Release();
@@ -60,6 +72,7 @@ void createDevice() {
 	d3dPP.BackBufferHeight = defaultScreenHeight;
 	d3dPP.hDeviceWindow = g_hWnd;
 
+	// Initiate the Virtual Graphics Card
 	HRESULT hr = direct3D9->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, g_hWnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &d3dPP, &d3dDevice);
 
 	if (FAILED(hr)) {
@@ -108,6 +121,7 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 			}
 			B += BI;
 			break;
+		//Full Screen Mode
 		case 'F':
 			if (windowMode) {
 				windowMode = false;
@@ -119,9 +133,11 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 				defaultScreenWidth = windowScreenWidth;
 				defaultScreenHeight = windowScreenHeight;
 			}
-
+			// Function that setup the windows settings
 			SetWindowPos(g_hWnd, NULL, 0, 0, defaultScreenWidth, defaultScreenHeight, SWP_NOMOVE | SWP_NOZORDER);
+			// Function that update and refresh the current window
 			UpdateWindow(g_hWnd);
+			// Create new Virtual Graphics Card as the Window Screen Size were configured
 			createDevice();
 			cout << "Full Screen Mode: " << !windowMode << " " << "Width : " << defaultScreenWidth << " " << "Height : " << defaultScreenHeight << " " << endl;
 			break;
@@ -133,6 +149,7 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 	return 0;
 }
 
+// Generate new window for the game
 void createWindow(HINSTANCE hInstance) {
 	ZeroMemory(&wndClass, sizeof(wndClass));
 	wndClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
@@ -147,6 +164,7 @@ void createWindow(HINSTANCE hInstance) {
 	ZeroMemory(&msg, sizeof(msg));
 }
 
+// Listening for input
 bool windowIsRunning() {
 	while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
 		if (msg.message == WM_QUIT) return false;
@@ -156,6 +174,7 @@ bool windowIsRunning() {
 	return true;
 }
 
+// Clear memory before closing the application
 void cleanupWindow(HINSTANCE hInstance) {
 	UnregisterClass(wndClass.lpszClassName, hInstance);
 }
