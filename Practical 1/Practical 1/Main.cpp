@@ -1,3 +1,4 @@
+//DON'T COPY MY CODE, IT'S JUST FOR YOUR REFERENCE - JOHN
 // Ask the compiler to include minimal header files for our program.
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
