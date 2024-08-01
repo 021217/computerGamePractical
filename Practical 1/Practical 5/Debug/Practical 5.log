@@ -1,0 +1,3 @@
+﻿  Main.cpp
+C:\Users\goh20\source\repos\Practical 1\Practical 5\Main.cpp(39,12): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Practical 5.vcxproj -> C:\Users\goh20\source\repos\Practical 1\Debug\Practical 5.exe
