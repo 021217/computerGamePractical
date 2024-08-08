@@ -375,6 +375,7 @@ void createWindow(HINSTANCE hInstance) {
     RegisterClass(&wndClass);
     g_hWnd = CreateWindowEx(0, wndClass.lpszClassName, "Mein Kahf", WS_OVERLAPPEDWINDOW, 0, 100, defaultScreenWidth, defaultScreenHeight, NULL, NULL, hInstance, NULL);
     ShowWindow(g_hWnd, 1);
+    ShowCursor(false);
     ZeroMemory(&msg, sizeof(msg));
 }
 
