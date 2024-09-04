@@ -1,0 +1,17 @@
+﻿  Main.cpp
+  C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(62,77): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(62,52): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(85,77): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(85,52): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(400,32): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(404,32): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(420,32): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(424,32): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(452,52): warning C4244: '=': conversion from 'int' to 'FLOAT', possible loss of data
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(464,51): warning C4244: '=': conversion from 'int' to 'FLOAT', possible loss of data
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(477,52): warning C4244: '=': conversion from 'int' to 'FLOAT', possible loss of data
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(489,51): warning C4244: '=': conversion from 'int' to 'FLOAT', possible loss of data
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(503,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\goh20\source\repos\Practical 1\Practical9\Main.cpp(503,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Practical9.vcxproj -> C:\Users\goh20\source\repos\Practical 1\Debug\Practical9.exe
